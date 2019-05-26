@@ -62,7 +62,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     let prefs = UserDefaults.standard
     if !prefs.bool(forKey: Utils.PrefKeys.appAlreadyLaunched.rawValue) {
       prefs.set(true, forKey: Utils.PrefKeys.appAlreadyLaunched.rawValue)
-
+      prefs.set(true, forKey: Utils.PrefKeys.showRGB.rawValue)
       prefs.set(false, forKey: Utils.PrefKeys.showContrast.rawValue)
       prefs.set(false, forKey: Utils.PrefKeys.lowerContrast.rawValue)
     }
@@ -151,6 +151,33 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         display.contrastSliderHandler = contrastSliderHandler
       }
 
+      if prefs.bool(forKey: Utils.PrefKeys.showRGB.rawValue) {
+        
+        
+        let redGainSliderHandler = Utils.addSliderMenuItem(toMenu: monitorSubMenu,
+                                                           forDisplay: display,
+                                                           command: .videoGainRed,
+                                                           title: NSLocalizedString("Red", comment: "Shown in menu"))
+        display.redGainSliderHandler = redGainSliderHandler
+        
+        
+        let blueGainSliderHandler = Utils.addSliderMenuItem(toMenu: monitorSubMenu,
+                                                           forDisplay: display,
+                                                           command: .videoGainBlue,
+                                                           title: NSLocalizedString("blue", comment: "Shown in menu"))
+        display.blueGainSliderHandler = blueGainSliderHandler
+        
+        
+        let greenGainSliderHandler = Utils.addSliderMenuItem(toMenu: monitorSubMenu,
+                                                           forDisplay: display,
+                                                           command: .videoGainGreen,
+                                                           title: NSLocalizedString("green", comment: "Shown in menu"))
+        display.greenGainSliderHandler = greenGainSliderHandler
+        
+      }
+
+      
+      
       display.volumeSliderHandler = volumeSliderHandler
       display.brightnessSliderHandler = brightnessSliderHandler
       self.displays.append(display)
@@ -181,6 +208,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     NotificationCenter.default.addObserver(self, selector: #selector(handleListenForChanged), name: NSNotification.Name(Utils.PrefKeys.listenFor.rawValue), object: nil)
     NotificationCenter.default.addObserver(self, selector: #selector(handleShowContrastChanged), name: NSNotification.Name(Utils.PrefKeys.showContrast.rawValue), object: nil)
     NotificationCenter.default.addObserver(self, selector: #selector(handleFriendlyNameChanged), name: NSNotification.Name(Utils.PrefKeys.friendlyName.rawValue), object: nil)
+    NotificationCenter.default.addObserver(self, selector: #selector(handleFriendlyNameChanged), name: NSNotification.Name(Utils.PrefKeys.showRGB.rawValue), object: nil)
 
     // subscribe Audio output detector (AMCoreAudio)
     AMCoreAudio.NotificationCenter.defaultCenter.subscribe(self, eventType: AudioHardwareEvent.self, dispatchQueue: DispatchQueue.main)

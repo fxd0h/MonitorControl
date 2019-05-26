@@ -362,19 +362,19 @@
             <objects>
                 <viewController storyboardIdentifier="MainPrefsVC" id="BGD-tY-Myx" customClass="MainPrefsViewController" customModule="MonitorControl" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="COE-Oc-gZs">
-                        <rect key="frame" x="0.0" y="0.0" width="486" height="208"/>
+                        <rect key="frame" x="0.0" y="0.0" width="486" height="278"/>
                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="siR-fL-v2a">
-                                <rect key="frame" x="18" y="159" width="92" height="29"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="General" id="ENU-js-huy">
+                                <rect key="frame" x="18" y="220" width="97" height="29"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="General " id="ENU-js-huy">
                                     <font key="font" metaFont="systemBold" size="24"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="9Gu-aU-Td2">
-                                <rect key="frame" x="18" y="86" width="199" height="18"/>
+                                <rect key="frame" x="18" y="147" width="199" height="18"/>
                                 <buttonCell key="cell" type="check" title="Start MonitorControl at Login" bezelStyle="regularSquare" imagePosition="left" inset="2" id="j72-NF-zsW">
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                     <font key="font" metaFont="system"/>
@@ -384,7 +384,7 @@
                                 </connections>
                             </button>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="xGa-qG-9ut">
-                                <rect key="frame" x="18" y="52" width="177" height="18"/>
+                                <rect key="frame" x="18" y="113" width="177" height="18"/>
                                 <buttonCell key="cell" type="check" title="Show a slider for contrast" bezelStyle="regularSquare" imagePosition="left" inset="2" id="xSI-8W-Xd0">
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                     <font key="font" metaFont="system"/>
@@ -393,8 +393,26 @@
                                     <action selector="showContrastSliderClicked:" target="BGD-tY-Myx" id="Jek-jL-YMn"/>
                                 </connections>
                             </button>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="tMg-qE-zTW">
+                                <rect key="frame" x="18" y="183" width="138" height="17"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="Version 0.0.0 (Build 0)" id="mBs-6m-13Q">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="NPM-Zt-775">
+                                <rect key="frame" x="18" y="49" width="150" height="18"/>
+                                <buttonCell key="cell" type="check" title="Show sliders for RGB" bezelStyle="regularSquare" imagePosition="left" inset="2" id="LF8-i4-fl6">
+                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="showRGBSliderClicked:" target="BGD-tY-Myx" id="TyK-sz-ca0"/>
+                                </connections>
+                            </button>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="i5K-Cd-wxm">
-                                <rect key="frame" x="18" y="18" width="215" height="18"/>
+                                <rect key="frame" x="18" y="79" width="215" height="18"/>
                                 <buttonCell key="cell" type="check" title="Lower Contrast after Brightness" bezelStyle="regularSquare" imagePosition="left" inset="2" id="fhy-Er-0aI">
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                     <font key="font" metaFont="system"/>
@@ -403,44 +421,40 @@
                                     <action selector="lowerContrastClicked:" target="BGD-tY-Myx" id="iTd-hI-jbv"/>
                                 </connections>
                             </button>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="tMg-qE-zTW">
-                                <rect key="frame" x="18" y="122" width="138" height="17"/>
-                                <textFieldCell key="cell" lineBreakMode="clipping" title="Version 0.0.0 (Build 0)" id="mBs-6m-13Q">
-                                    <font key="font" metaFont="system"/>
-                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                </textFieldCell>
-                            </textField>
                         </subviews>
                         <constraints>
+                            <constraint firstAttribute="trailing" secondItem="NPM-Zt-775" secondAttribute="trailing" constant="320" id="39H-IA-DtO"/>
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="i5K-Cd-wxm" secondAttribute="trailing" constant="20" id="7p3-HQ-gLl"/>
                             <constraint firstItem="xGa-qG-9ut" firstAttribute="top" secondItem="9Gu-aU-Td2" secondAttribute="bottom" constant="20" id="DOL-i0-bCI"/>
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="9Gu-aU-Td2" secondAttribute="trailing" constant="20" id="Gft-KX-rdy"/>
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="xGa-qG-9ut" secondAttribute="trailing" constant="20" id="HDL-zX-2dq"/>
                             <constraint firstItem="9Gu-aU-Td2" firstAttribute="leading" secondItem="COE-Oc-gZs" secondAttribute="leading" constant="20" id="MwQ-M8-u18"/>
                             <constraint firstItem="xGa-qG-9ut" firstAttribute="leading" secondItem="COE-Oc-gZs" secondAttribute="leading" constant="20" id="NgS-ga-iNo"/>
+                            <constraint firstItem="NPM-Zt-775" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="i5K-Cd-wxm" secondAttribute="leading" id="QAk-Bu-jNb"/>
                             <constraint firstItem="i5K-Cd-wxm" firstAttribute="top" secondItem="xGa-qG-9ut" secondAttribute="bottom" constant="20" id="R2I-Ko-ZJ9"/>
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="siR-fL-v2a" secondAttribute="trailing" constant="20" id="Srs-vY-IQB"/>
                             <constraint firstItem="9Gu-aU-Td2" firstAttribute="top" secondItem="tMg-qE-zTW" secondAttribute="bottom" constant="20" id="caN-Et-n47"/>
                             <constraint firstItem="siR-fL-v2a" firstAttribute="leading" secondItem="COE-Oc-gZs" secondAttribute="leading" constant="20" id="eXs-op-WJj"/>
-                            <constraint firstItem="siR-fL-v2a" firstAttribute="top" secondItem="COE-Oc-gZs" secondAttribute="top" constant="20" id="iTz-r7-NFb"/>
+                            <constraint firstItem="siR-fL-v2a" firstAttribute="top" secondItem="COE-Oc-gZs" secondAttribute="top" constant="29" id="iTz-r7-NFb"/>
                             <constraint firstItem="i5K-Cd-wxm" firstAttribute="leading" secondItem="COE-Oc-gZs" secondAttribute="leading" constant="20" id="jWI-DQ-WdT"/>
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="tMg-qE-zTW" secondAttribute="trailing" constant="20" id="jzw-7W-4cW"/>
                             <constraint firstItem="tMg-qE-zTW" firstAttribute="leading" secondItem="COE-Oc-gZs" secondAttribute="leading" constant="20" id="qhb-hw-Gwg"/>
-                            <constraint firstAttribute="bottom" secondItem="i5K-Cd-wxm" secondAttribute="bottom" constant="20" id="xxz-YT-Uma"/>
+                            <constraint firstItem="NPM-Zt-775" firstAttribute="top" secondItem="i5K-Cd-wxm" secondAttribute="bottom" constant="16" id="xeP-Zg-EFb"/>
+                            <constraint firstAttribute="bottom" secondItem="i5K-Cd-wxm" secondAttribute="bottom" constant="81" id="xxz-YT-Uma"/>
                             <constraint firstItem="tMg-qE-zTW" firstAttribute="top" secondItem="siR-fL-v2a" secondAttribute="bottom" constant="20" id="zis-v1-6aZ"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="lowerContrast" destination="i5K-Cd-wxm" id="sE8-Ra-JSn"/>
                         <outlet property="showContrastSlider" destination="xGa-qG-9ut" id="AzL-sx-Z8Q"/>
+                        <outlet property="showRGBSlider" destination="NPM-Zt-775" id="cAB-FW-uBv"/>
                         <outlet property="startAtLogin" destination="9Gu-aU-Td2" id="Tyx-Ub-Cyf"/>
                         <outlet property="versionLabel" destination="tMg-qE-zTW" id="31N-s8-URL"/>
                     </connections>
                 </viewController>
                 <customObject id="JDw-du-OST" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="162" y="218"/>
+            <point key="canvasLocation" x="162" y="255"/>
         </scene>
     </scenes>
 </document>

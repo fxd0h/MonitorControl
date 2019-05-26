@@ -154,6 +154,9 @@ class Utils: NSObject {
 
     /// Friendly name changed
     case friendlyName
+    
+    //// Show RGB gains
+    case showRGB
   }
 
   /// Keys for the value of listenFor option
